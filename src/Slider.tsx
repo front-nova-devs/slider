@@ -38,7 +38,7 @@ export default function Slider({ slides, interval = 5000 }: SliderProps) {
             key={slide.id}
             className={`relative min-w-full h-full shrink-0 flex items-center justify-center bg-gradient-to-br ${slide.bg}`}
           >
-            <h2 className="text-white text-4xl md:text-7xl font-bold tracking-tight select-none">
+            <h2 className="text-white text-4xl md:text-7xl font-thin tracking-tight select-none">
               {slide.title}
             </h2>
           </div>
