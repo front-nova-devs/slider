@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from 'react'
 type Slide = {
   id: number
   bg: string
+  image?: string
   title?: string
 }
 
@@ -37,6 +38,11 @@ export default function Slider({ slides, interval = 5000 }: SliderProps) {
           <div
             key={slide.id}
             className={`relative min-w-full h-full shrink-0 flex items-center justify-center bg-gradient-to-br ${slide.bg}`}
+            style={{
+              backgroundImage: slide.image ? `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${slide.image})` : undefined,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
           >
             <h2 className="text-white text-4xl md:text-7xl font-thin tracking-tight select-none">
               {slide.title}
