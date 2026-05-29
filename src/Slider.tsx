@@ -41,7 +41,7 @@ export default function Slider({ slides, interval = 5000 }: SliderProps) {
     const timer = setTimeout(() => {
       setCurrent(next)
       setIsAnimating(false)
-    }, 1200)
+    }, 600)
     return () => clearTimeout(timer)
   }, [isAnimating, next])
 
@@ -58,9 +58,9 @@ export default function Slider({ slides, interval = 5000 }: SliderProps) {
             style={{
               opacity: isActive ? (isAnimating ? 0 : 1) : isNext ? 1 : 0,
               transition: isActive
-                ? 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1)'
+                ? 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
                 : isNext
-                  ? 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1)'
+                  ? 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
                   : 'none',
               zIndex: isNext ? 2 : isActive ? 1 : 0,
             }}
@@ -78,7 +78,7 @@ export default function Slider({ slides, interval = 5000 }: SliderProps) {
                   : isNext
                     ? 'scale(1.08)'
                     : 'scale(1)',
-                transition: 'transform 8s cubic-bezier(0.25, 0.1, 0.25, 1)',
+                transition: 'transform 4s cubic-bezier(0.25, 0.1, 0.25, 1)',
               }}
             />
 
@@ -96,9 +96,9 @@ export default function Slider({ slides, interval = 5000 }: SliderProps) {
                       ? 'translateY(20px)'
                       : 'translateY(20px)',
                   transition: isActive
-                    ? 'all 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s'
+                    ? 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.15s'
                     : isNext
-                      ? 'all 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s'
+                      ? 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
                       : 'none',
                 }}
               >
